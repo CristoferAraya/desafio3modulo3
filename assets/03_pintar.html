@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+
+    <div id="ele1" style="width: 200px; height:200px; background-color:yellow"> hello </div>
+    <script>
+        //function pintar() {
+            //ele = document.getElementById("ele1")
+            //ele.style.backgroundColor = 'yellow'
+        //}
+        //ele = document.getElementById("ele1")
+        //ele.addEventListener("click", pintar);
+
+        //Modificar para no tener que seleccionar el elemento cada vez que se llama a oa funcion
+        //ele = document.getElementById("ele1");
+        //ele.addEventListener("click", function() {
+        //    ele.style.backgroundColor = 'yellow'
+        //});
+
+        //Modificar para recibir un parametro, por defecto green 
+        pintar = (ele, color = 'green') =>  ele.style.backgroundColor = color ;
+        
+        ele = document.getElementById("ele1");
+        ele.addEventListener("click", () => pintar(ele, 'red'));
+    </script>
+
+
+
+</body>
+
+</html>

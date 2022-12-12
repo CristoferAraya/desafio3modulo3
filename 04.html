@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .grid>div {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="grid">
+        <div id="div_1">1</div>
+        <div id="div_2">2</div>
+        <div id="div_3">3</div>
+        <div id="div_4">4</div>
+    </div>
+    <script>
+        let color = 'white'
+        document.addEventListener('keydown',  (event) => {
+      
+            if (event.key === 'a') {
+                color = "red"
+            } else if (event.key === 's') {
+                color = "green"
+            } else if (event.key === 'd') {
+                color = "blue"
+         
+            } else {
+                 color = "white";
+            }
+            console.log("key[" + event.key + "] => " + color)
+           
+        })
+
+        //Derectar el click y pintar el fondo del div del color correspondiente
+        document.querySelector(div).addEventListener('click', (event) => {
+           
+            console.log("click en el div id: " + event.target.id)
+           
+            let currentDiv = document.querySelector("#" + event.target.id)
+            currentDiv.style.backgroundColor = color;
+            
+        });
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
